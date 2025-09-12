@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Calculator.MortgageCalculatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Grid Background="#E6F0FA">
+		<StackPanel Padding="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="420">
+			<TextBlock Text="Mortgage Calculator"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="DarkBlue"
+                       Margin="0,0,0,10"/>
+
+			<TextBlock Text="Principal (P)" Foreground="Black"/>
+			<TextBox x:Name="PrincipalBox" PlaceholderText="300000"/>
+
+			<TextBlock Text="Annual Interest Rate (%)" Foreground="Black"/>
+			<TextBox x:Name="AnnualRateBox" PlaceholderText="4"/>
+
+			<TextBlock Text="Term (years)" Foreground="Black"/>
+			<TextBox x:Name="YearsBox" PlaceholderText="30"/>
+
+			<StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+				<Button Content="Calculate"
+                        Click="Calculate_Click"
+                        Width="120"
+                        Background="#4C6EF5"
+                        Foreground="White"/>
+				<Button Content="Clear"
+                        Click="Clear_Click"
+                        Width="90"
+                        Background="#6C757D"
+                        Foreground="White"/>
+			</StackPanel>
+
+			<TextBlock x:Name="ResultText"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Foreground="DarkGreen"
+                       Margin="0,10,0,0"/>
+		</StackPanel>
+	</Grid>
+</Page>
