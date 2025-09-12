@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="Calculator.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Grid Background="#ADD8E6">
+		<StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock x:Name="titleTextBlock" Text="Universal Calculator" FontSize="100px" FontWeight="ExtraBold" Margin="30,120,0,0"/>
+				<TextBlock x:Name="authorTextBlock" Text="by Cole and Ben" FontSize="40px" FontWeight="Bold" Margin="40,0,0,0" Foreground="#FFFFE0"/>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Margin="0,20,0,0">
+				<Button x:Name="mathButton" Content="Math Calculator" FontSize="30px" Margin="50,10,0,0" Background="#4C4C4C"/>
+				<Button x:Name="mortgageButton" Content="Mortgage Calculator" FontSize="30px"  Margin="50,10,0,0" Background="#4C4C4C"/>
+				<Button x:Name="currencyButton" Content="Currency Calculator" FontSize="30px"  Margin="50,10,0,0" Background="#4C4C4C"/>
+				<Button x:Name="exitButton" Content="Exit" FontSize="30px" Margin="50,10,0,0" Background="#4C4C4C"/>
+			</StackPanel>
+			<StackPanel>
+				<Image x:Name="mainImage" Source="/abacus.jpg" Height="368" Width="550" HorizontalAlignment="Right" Margin="0,0,40,0"/>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Page>
