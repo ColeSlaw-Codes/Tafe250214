@@ -24,6 +24,18 @@ namespace Calculator
 		{
 			this.InitializeComponent();
 			mortgageButton.Click += MortgageButton_Click;
+			currencyButton.Click += CurrencyButton_Click;
+			mathButton.Click += MathButton_Click;
+		}
+
+		private void MathButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(MainPage));
+		}
+
+		private void CurrencyButton_Click(object sender, RoutedEventArgs e)
+		{
+			Frame.Navigate(typeof(CurrencyCalculatorPage));
 		}
 
 		private void MortgageButton_Click(object sender, RoutedEventArgs e)

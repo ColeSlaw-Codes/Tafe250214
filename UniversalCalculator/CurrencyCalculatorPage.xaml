@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="Calculator.CurrencyCalculatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+	<Grid Background="#ADD8E6">
+		<StackPanel Orientation="Vertical">
+			<StackPanel Margin="0,40,0,0">
+				<TextBlock Text="Currency Conversion Calculator" FontSize="64px" FontWeight="ExtraBold" Foreground="Black" HorizontalAlignment="Center"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+				<StackPanel Margin="40,0,0,0">
+					<TextBlock Text="Amount $" FontSize="45px" FontWeight="ExtraBold" Foreground="Black"/>
+					<TextBox x:Name="amountTextBox" FontSize="30px" Foreground="Black" Width="300" Margin="0,10,0,0" Background="#FFFFE0"/>
+				</StackPanel>
+				<StackPanel Margin="140,0,0,0">
+					<TextBlock Text="From" FontSize="45px" FontWeight="ExtraBold" Foreground="Black"/>
+					<ComboBox x:Name="fromComboBox" FontSize="30px" Foreground="Black" Width="300" Margin="0,10,0,0" Background="#FFFFE0">
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="USD" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/USA1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="EUR" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/EUR1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="INR" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/INDIA.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="GBP" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/UK1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+				<StackPanel Margin="140,0,0,0">
+					<TextBlock Text="To" FontSize="45px" FontWeight="ExtraBold" Foreground="Black"/>
+					<ComboBox x:Name="toComboBox" FontSize="30px" Foreground="Black" Width="300" Margin="0,10,0,0" Background="#FFFFE0">
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="USD" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/USA1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="EUR" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/EUR1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="INR" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/INDIA.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+						<ComboBoxItem Background="#FFFFE0">
+							<StackPanel Orientation="Horizontal">
+								<TextBlock Text="GBP" HorizontalAlignment="Left" Foreground="Black"/>
+								<Image Source="/Images/UK1.PNG" HorizontalAlignment="Right"/>
+							</StackPanel>
+						</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Margin="40,40,0,0">
+				<TextBlock x:Name="amountTextBlock" Text="100 US Dollars" FontSize="30px" Foreground="Black"/>
+				<TextBlock x:Name="convertedTextBlock" Text="85.19 Euros" FontSize="40px" FontWeight="ExtraBold" Foreground="Black"/>
+				<TextBlock x:Name="currencyRateTextBlock" Text="1 USDD = 0.851 Euros" FontSize="30px" Foreground="Black"/>
+				<TextBlock x:Name="currencyReverseTextBlock" Text="1 Euro = 1.1739" FontSize="30px" Foreground="Black"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Margin="40,40,0,0">
+				<Button x:Name="calculateCurrencyButton" Background="#FFFFE0" Content="Calculate Currency" FontSize="40px" FontWeight="ExtraBold" Foreground="Black" Click="calculateCurrencyButton_Click"/>
+				<Button x:Name="exitCurrencyButton" Background="#FFFFE0" Content="Exit" FontSize="40px" FontWeight="ExtraBold" Foreground="Black" Margin="40,0,0,0"/>
+			</StackPanel>
+		</StackPanel>
+    </Grid>
+</Page>
