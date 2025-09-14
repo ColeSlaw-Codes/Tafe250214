@@ -15,7 +15,6 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-
 namespace Calculator
 {
 	public sealed partial class MainMenu : Page
@@ -26,6 +25,7 @@ namespace Calculator
 			mortgageButton.Click += MortgageButton_Click;
 			currencyButton.Click += CurrencyButton_Click;
 			mathButton.Click += MathButton_Click;
+			exitButton.Click += ExitButton_Click;   // 🔹 add this line
 		}
 
 		private void MathButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +41,11 @@ namespace Calculator
 		private void MortgageButton_Click(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(MortgageCalculatorPage));
+		}
+
+		private void ExitButton_Click(object sender, RoutedEventArgs e)   // 🔹 add this method
+		{
+			Application.Current.Exit();
 		}
 	}
 }
