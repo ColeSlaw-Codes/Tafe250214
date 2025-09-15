@@ -16,52 +16,51 @@ namespace Calculator
 			PrincipalBox.Text = "";
 			AnnualRateBox.Text = "";
 			YearsBox.Text = "";
-			ResultText.Text = "";
+			MonthsBox.Text = "";
+			MonthlyRateBox.Text = "";
+			RepaymentBox.Text = "";
 			PrincipalBox.Focus(FocusState.Programmatic);
 		}
 
 		private void Calculate_Click(object sender, RoutedEventArgs e)
 		{
-			decimal principal;
-			decimal annualPercent;
-			int years;
-
-			bool okPrincipal = decimal.TryParse(PrincipalBox.Text, out principal);
-			bool okRate = decimal.TryParse(AnnualRateBox.Text, out annualPercent);
-			bool okYears = int.TryParse(YearsBox.Text, out years);
-
-			if (!okPrincipal || !okRate || !okYears || principal <= 0 || annualPercent < 0 || years <= 0)
+			// Parse inputs
+			if (!decimal.TryParse(PrincipalBox.Text, out var principal) ||
+				!decimal.TryParse(AnnualRateBox.Text, out var annualPercent) ||
+				!int.TryParse(YearsBox.Text == "" ? "0" : YearsBox.Text, out var years) ||
+				!int.TryParse(MonthsBox.Text == "" ? "0" : MonthsBox.Text, out var months) ||
+				principal <= 0 || annualPercent < 0)
 			{
-				ResultText.Text = "Please enter valid values.";
+				RepaymentBox.Text = "Enter valid values.";
 				return;
 			}
 
-			decimal monthly = CalculateMonthlyRepayment(principal, annualPercent, years);
-			ResultText.Text = "Monthly payment: " + monthly.ToString("C");
-		}
+			int n = years * 12 + months;
+			if (n <= 0)
+			{
+				RepaymentBox.Text = "Enter years or months.";
+				return;
+			}
 
-		private static decimal CalculateMonthlyRepayment(decimal principal, decimal annualRatePercent, int termYears)
-		{
-			double i = (double)annualRatePercent / 100.0;
-			i = i / 12.0;
+			// Monthly interest rate (as a fraction)
+			double i = (double)annualPercent / 100.0 / 12.0;
 
-			int n = termYears * 12;
+			// Show monthly rate as a percentage (e.g., 0.333%)
+			MonthlyRateBox.Text = i.ToString("P3");
 
+			// Handle zero-interest case
 			if (i == 0.0)
 			{
 				decimal simple = principal / n;
-				return Math.Round(simple, 2, MidpointRounding.AwayFromZero);
+				RepaymentBox.Text = Math.Round(simple, 2, MidpointRounding.AwayFromZero).ToString("C");
+				return;
 			}
 
-			double onePlusI = 1.0 + i;
-			double pow = Math.Pow(onePlusI, n);
-			double top = (double)principal * i * pow;
-			double bottom = pow - 1.0;
-			double m = top / bottom;
+			double pow = Math.Pow(1 + i, n);
+			double m = (double)principal * (i * pow) / (pow - 1);
 
-			decimal result = (decimal)m;
-			result = Math.Round(result, 2, MidpointRounding.AwayFromZero);
-			return result;
+			var monthly = (decimal)Math.Round(m, 2, MidpointRounding.AwayFromZero);
+			RepaymentBox.Text = monthly.ToString("C");
 		}
 
 		private void Back_Click(object sender, RoutedEventArgs e)
