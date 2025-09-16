@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="Calculator.MortgageCalculatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Grid Background="#E6F0FA">
+		<StackPanel Padding="20" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="460">
+			<TextBlock Text="Mortgage Calculator"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="DarkBlue"
+                       Margin="0,0,0,10"/>
+
+			<TextBlock Text="Principal borrowed: $" />
+			<TextBox x:Name="PrincipalBox" PlaceholderText="300000"/>
+
+			<TextBlock Text="Years:" />
+			<TextBox x:Name="YearsBox" PlaceholderText="30"/>
+
+			<TextBlock Text="Months:" />
+			<TextBox x:Name="MonthsBox" PlaceholderText="0"/>
+
+			<TextBlock Text="Annual Interest Rate: %"/>
+			<TextBox x:Name="AnnualRateBox" PlaceholderText="4"/>
+
+			<TextBlock Text="Monthly Interest Rate:" />
+			<TextBox x:Name="MonthlyRateBox" IsReadOnly="True"/>
+
+			<TextBlock Text="Monthly Repayment:" />
+			<TextBox x:Name="RepaymentBox" IsReadOnly="True"/>
+
+			<StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+				<Button Content="Calculate"
+                        Click="Calculate_Click"
+                        Width="120"
+                        Background="#4C6EF5"
+                        Foreground="White"/>
+				<Button Content="Clear"
+                        Click="Clear_Click"
+                        Width="90"
+                        Background="#6C757D"
+                        Foreground="White"/>
+			</StackPanel>
+
+			<Button Content="Back to Menu"
+                    Height="44"
+                    MinWidth="140"
+                    Margin="0,12,0,0"
+                    Background="#4C4C4C"
+                    Foreground="White"
+                    Click="Back_Click"/>
+		</StackPanel>
+	</Grid>
+</Page>
