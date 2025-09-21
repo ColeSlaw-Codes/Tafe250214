@@ -18,7 +18,9 @@
 				<Button x:Name="mathButton" Content="Math Calculator" FontSize="30px" Margin="50,10,0,0" Background="#4C4C4C"/>
 				<Button x:Name="mortgageButton" Content="Mortgage Calculator" FontSize="30px"  Margin="50,10,0,0" Background="#4C4C4C"/>
 				<Button x:Name="currencyButton" Content="Currency Calculator" FontSize="30px"  Margin="50,10,0,0" Background="#4C4C4C"/>
+				<Button x:Name="tripButton" Content="Trip Calculator" FontSize="30px" Margin="50,10,0,0" Background="#4C4C4C"/>
 				<Button x:Name="exitButton" Content="Exit" FontSize="30px" Margin="50,10,0,0" Background="#4C4C4C"/>
+				
 			</StackPanel>
 			<StackPanel>
 				<Image x:Name="mainImage" Source="/abacus.jpg" Height="368" Width="550" HorizontalAlignment="Right" Margin="0,0,40,0"/>
