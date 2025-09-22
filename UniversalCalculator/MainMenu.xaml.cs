@@ -25,7 +25,10 @@ namespace Calculator
 			mortgageButton.Click += MortgageButton_Click;
 			currencyButton.Click += CurrencyButton_Click;
 			mathButton.Click += MathButton_Click;
-			exitButton.Click += ExitButton_Click;   // 🔹 add this line
+			exitButton.Click += ExitButton_Click;
+
+			// 🔹 New Trip button wiring
+			tripButton.Click += TripButton_Click;
 		}
 
 		private void MathButton_Click(object sender, RoutedEventArgs e)
@@ -43,9 +46,22 @@ namespace Calculator
 			Frame.Navigate(typeof(MortgageCalculatorPage));
 		}
 
-		private void ExitButton_Click(object sender, RoutedEventArgs e)   // 🔹 add this method
+		private void ExitButton_Click(object sender, RoutedEventArgs e)
 		{
 			Application.Current.Exit();
+		}
+
+		// 🔹 New Trip button handler
+		private async void TripButton_Click(object sender, RoutedEventArgs e)
+		{
+			var dialog = new ContentDialog
+			{
+				Title = "Trip Calculator",
+				Content = "Trip calculator C# code will be developed later.",
+				CloseButtonText = "OK"
+			};
+
+			await dialog.ShowAsync();
 		}
 	}
 }
